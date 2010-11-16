@@ -5,10 +5,12 @@ package
 	
 	public function get remoteService():IRemoteService
 	{
-		return RemoteService.instance;
+		return _remoteService;
 	}
-	
 }
+
+var _remoteService:IRemoteService = new RemoteService();
+
 import com.riaspace.un.IRemoteService;
 
 import mx.rpc.AsyncToken;
@@ -18,8 +20,6 @@ import mx.rpc.remoting.RemoteObject;
 
 internal class RemoteService implements IRemoteService
 {
-	internal static var instance:IRemoteService = new RemoteService();
-	
 	private var configObj:Object;
 	
 	public function set config(value:Class):void

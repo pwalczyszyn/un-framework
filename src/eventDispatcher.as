@@ -5,11 +5,11 @@ package
 	
 	public function get eventDispatcher():IEventDispatcher
 	{
-		return _dispatcher;
+		return _eventDispatcher;
 	}
 }
 
 import flash.events.EventDispatcher;
 import flash.events.IEventDispatcher;
 
-var _dispatcher:IEventDispatcher = new EventDispatcher();
+var _eventDispatcher:IEventDispatcher = new EventDispatcher();

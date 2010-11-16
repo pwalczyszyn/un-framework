@@ -1,13 +1,13 @@
 // ActionScript file
 package
 {
-	
-
 	public function get applicationContext():ApplicationContext
 	{
-		return ApplicationContext.instance;
+		return _applicationContext;
 	}
 }
+
+var _applicationContext:ApplicationContext = new ApplicationContext();
 
 import flash.events.Event;
 import flash.events.EventDispatcher;
@@ -22,8 +22,6 @@ use namespace flash_proxy;
 
 internal dynamic class ApplicationContext extends Proxy implements IEventDispatcher
 {
-	
-	internal static var instance:ApplicationContext = new ApplicationContext();
 	
 	private var values:Object;
 	
