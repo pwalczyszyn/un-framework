@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
-    <classEntry path="eventDispatcher"/>
     <classEntry path="com.riaspace.un.IRemoteService"/>
+    <classEntry path="com.riaspace.un.IUnFramework"/>
+    <classEntry path="com.riaspace.un.Context"/>
+    <classEntry path="com.riaspace.un.events.ContextPropertyChangeEvent"/>
+    <classEntry path="com.riaspace.un.RemoteService"/>
+    <classEntry path="com.riaspace.un.UnFramework"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
