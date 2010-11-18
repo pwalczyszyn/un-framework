@@ -1,13 +1,13 @@
 package com.riaspace.un
 {
-	import com.riaspace.un.IRemoteService;
+	import com.riaspace.un.IRemoteServices;
 	
 	import mx.rpc.AsyncToken;
 	import mx.rpc.Responder;
 	import mx.rpc.remoting.Operation;
 	import mx.rpc.remoting.RemoteObject;
 	
-	public class RemoteService implements IRemoteService
+	public class RemoteServices implements IRemoteServices
 	{
 		private var configObj:Object;
 		

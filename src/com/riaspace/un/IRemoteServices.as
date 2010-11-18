@@ -3,7 +3,7 @@ package com.riaspace.un
 	import mx.rpc.AsyncToken;
 	import mx.rpc.remoting.RemoteObject;
 
-	public interface IRemoteService
+	public interface IRemoteServices
 	{
 		function configure(configClass:Class):void;
 		
