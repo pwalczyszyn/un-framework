@@ -11,9 +11,12 @@ package com.riaspace.un
 	{
 		private var configObj:Object;
 		
-		public function configure(configClass:Class):void
+		public function configure(config:Object):void
 		{
-			configObj = new configClass();
+			if (config is Class)
+				configObj = new config();
+			else
+				configObj = config;
 		}
 		
 		public function getRemoteObject(remoteObjectId:String):RemoteObject

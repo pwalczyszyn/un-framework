@@ -5,7 +5,7 @@ package com.riaspace.un
 
 	public interface IRemoteServices
 	{
-		function configure(configClass:Class):void;
+		function configure(config:Object):void;
 		
 		function getRemoteObject(remoteObjectId:String):RemoteObject;
 			

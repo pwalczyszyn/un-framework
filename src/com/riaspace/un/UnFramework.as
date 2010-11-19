@@ -12,32 +12,17 @@ package com.riaspace.un
 		
 		private var _service:IRemoteServices;
 		
-		public function get eventDispatcher():IEventDispatcher
+		public function get dispatcher():IEventDispatcher
 		{
 			return _eventDispatcher;
 		}
-		
-		public function hasEventListener(type:String):Boolean
-		{
-			return _eventDispatcher.hasEventListener(type);
-		}
-		
-		public function willTrigger(type:String):Boolean
-		{
-			return _eventDispatcher.willTrigger(type);
-		}
-		
-		public function addEventListener(type:String, listener:Function, useCapture:Boolean=false, priority:int=0.0, useWeakReference:Boolean=false):void
+
+		public function listen(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void
 		{
 			_eventDispatcher.addEventListener(type, listener, useCapture, priority, useWeakReference);
 		}
 		
-		public function removeEventListener(type:String, listener:Function, useCapture:Boolean=false):void
-		{
-			_eventDispatcher.removeEventListener(type, listener, useCapture);
-		}
-		
-		public function dispatchEvent(event:Event):Boolean
+		public function dispatch(event:Event):Boolean
 		{
 			return _eventDispatcher.dispatchEvent(event);
 		}
@@ -49,7 +34,7 @@ package com.riaspace.un
 			return _context;
 		}
 		
-		public function inout(objectId:String, objectValue:*=null):*
+		public function inject(objectId:String, objectValue:*=null):*
 		{
 			if (objectValue)
 				return context[objectId] = objectValue;
