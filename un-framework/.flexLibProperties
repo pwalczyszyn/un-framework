@@ -2,7 +2,7 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="com.riaspace.un.IUnFramework"/>
-    <classEntry path="com.riaspace.un.Context"/>
+    <classEntry path="com.riaspace.un.ApplicationModel"/>
     <classEntry path="com.riaspace.un.events.ContextPropertyChangeEvent"/>
     <classEntry path="com.riaspace.un.UnFramework"/>
   </includeClasses>

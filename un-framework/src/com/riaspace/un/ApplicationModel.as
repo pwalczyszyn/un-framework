@@ -13,14 +13,14 @@ package com.riaspace.un
 	
 	[Event(name="propertyChange", type="com.riaspace.un.events.ContextPropertyChangeEvent")]
 	
-	public dynamic class Context extends Proxy implements IEventDispatcher
+	public dynamic class ApplicationModel extends Proxy implements IEventDispatcher
 	{
 		
 		private var _values:Object;
 		
 		private var _dispatcher:IEventDispatcher;
 		
-		public function Context(dispatcher:IEventDispatcher)
+		public function ApplicationModel(dispatcher:IEventDispatcher)
 		{
 			_dispatcher = dispatcher;
 			_values = new Object();

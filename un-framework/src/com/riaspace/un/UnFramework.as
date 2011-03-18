@@ -8,7 +8,7 @@ package com.riaspace.un
 	{
 		private var _eventDispatcher:IEventDispatcher = new EventDispatcher;
 		
-		private var _context:Context;
+		private var _context:ApplicationModel;
 		
 		private var _service:IRemoteServices;
 		
@@ -17,9 +17,9 @@ package com.riaspace.un
 			return _eventDispatcher;
 		}
 
-		public function listen(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void
+		public function listen(type:String, listener:Function, priority:int = 0):void
 		{
-			_eventDispatcher.addEventListener(type, listener, useCapture, priority, useWeakReference);
+			_eventDispatcher.addEventListener(type, listener, false, priority, true);
 		}
 		
 		public function dispatch(event:Event):Boolean
@@ -27,19 +27,16 @@ package com.riaspace.un
 			return _eventDispatcher.dispatchEvent(event);
 		}
 		
-		public function get context():Context
+		public function get model():ApplicationModel
 		{
 			if (!_context)
-				_context = new Context(_eventDispatcher);
+				_context = new ApplicationModel(_eventDispatcher);
 			return _context;
 		}
 		
-		public function inject(objectId:String, objectValue:*=null):*
+		public function inject(objectId:String, objectValue:*, overwrite:Boolean = true):*
 		{
-			if (objectValue)
-				return context[objectId] = objectValue;
-			else
-				return context[objectId];
+			return overwrite ? model[objectId] = objectValue : model[objectId];
 		}
 		
 		public function get services():IRemoteServices
