@@ -29,6 +29,8 @@ package com.riaspace.un
 	
 	use namespace flash_proxy;
 	
+	[Bindable("propertyChange")]
+	
 	[Event(name="propertyChange", type="com.riaspace.un.events.ContextPropertyChangeEvent")]
 	
 	public dynamic class ApplicationModel extends Proxy implements IEventDispatcher

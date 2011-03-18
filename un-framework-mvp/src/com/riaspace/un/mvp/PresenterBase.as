@@ -22,7 +22,7 @@ package com.riaspace.un.mvp
 
 	public class PresenterBase extends ControllerBase
 	{
-		protected var view:DisplayObject;
+		protected var view:Object;
 		
 		public function PresenterBase()
 		{

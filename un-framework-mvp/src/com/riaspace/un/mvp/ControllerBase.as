@@ -47,12 +47,12 @@ package com.riaspace.un.mvp
 		{
 		}
 
-		[Bindable(event="propertyChange")]
 		/**
 		 * Returns global application model.
 		 * 
 		 * PropertyChangeEvent handler can be registered with ApplicationModel instance.
 		 */
+		[Bindable(event="propertyChange")]
 		public function get model():ApplicationModel
 		{
 			return $.model;
