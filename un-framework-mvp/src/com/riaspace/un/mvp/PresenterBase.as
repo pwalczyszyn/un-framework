@@ -18,12 +18,10 @@
 
 package com.riaspace.un.mvp
 {
-	import flash.display.DisplayObject;
+	import flash.events.Event;
 
 	public class PresenterBase extends ControllerBase
 	{
-		protected var view:Object;
-		
 		public function PresenterBase()
 		{
 			super();
@@ -31,8 +29,24 @@ package com.riaspace.un.mvp
 		
 		override public function initialized(document:Object, id:String):void
 		{
-			view = DisplayObject(document);
+			if (hasOwnProperty("view"))
+				this["view"] = document;
+			
 			super.initialized(document, id);
+		}
+
+		/**
+		 * This is a helper function, it can be overriden.
+		 */ 
+		protected function viewAddedToStage(event:Event):void
+		{
+		}
+		
+		/**
+		 * This is a helper function, it can be overriden.
+		 */ 
+		protected function viewRemovedFromStage(event:Event):void
+		{
 		}
 	}
 }
